@@ -1,0 +1,50 @@
+.navbar {
+  background-color: brown;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 1em;
+}
+
+.links {
+  display: flex;
+  width: 20vw;
+  justify-content: space-around;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 10fr;
+}
+
+.sidebar {
+  background-color:darkgreen;
+  padding-top: 1em;
+  height: 100vh;
+  text-align: center;
+}
+
+.layout {
+  background-color:cadetblue;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.container {
+  border: solid 1px transparent;
+  border-radius: 10px;
+  padding: 10px;
+  transition: border-color 0.4s linear;
+}
+
+.container:hover {
+  border-color: lightgray;
+}
+
+.container > img {
+  width: 300px;
+  height: auto;
+}
+
+.container > .content > p:first-child {
+  font-weight: bold;
+}
