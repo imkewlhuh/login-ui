@@ -83,7 +83,7 @@ function Login(props){
           <Form.Label>Password</Form.Label>
           <Form.Control onChange={(e) => setPassword(e.target.value)} type="password" placeholder="Enter Your Password" name="password" />
         </Form.Group>
-        <div className='mb-3 d-grid'>
+        <div className='mb-4 d-grid'>
           <Button type="submit">Login</Button>
         </div>
         <div className='mb-2 d-grid'>
@@ -98,6 +98,11 @@ function Signup(props){
   const signIn = (e) => {
     e.preventDefault();
     props.signIn(true);
+  }
+
+  const logIn = (e) => {
+    e.preventDefault();
+    props.show(true);
   }
 
   return (
@@ -122,8 +127,11 @@ function Signup(props){
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" placeholder="Create Your Password" name="password" />
         </Form.Group>
-        <div className='d-grid gap-2'>
-          <Button type="submit" size='lg'>Sign Up</Button>
+        <div className='mb-4 d-grid'>
+          <Button type="submit">Sign Up</Button>
+        </div>
+        <div className='mb-2 d-grid'>
+          <Button onClick={logIn}>Log In</Button>
         </div>
       </Form>
     </Container>
@@ -161,7 +169,7 @@ function App() {
       showLogin ? 
       <Login setLoginUser={setUserLoggedIn} show={setShowLogin}/> 
       :
-      <Signup signIn={setUserLoggedIn} />
+      <Signup signIn={setUserLoggedIn} show={setShowLogin} />
       }
     </>
   )
